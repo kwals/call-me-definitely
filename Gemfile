@@ -46,6 +46,8 @@ gem 'figaro'
 gem 'activesupport'
 gem 'slim-rails'
 gem 'httparty'
+gem 'twilio-ruby'
+
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
