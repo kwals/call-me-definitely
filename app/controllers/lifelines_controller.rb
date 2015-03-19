@@ -5,6 +5,8 @@ class LifelinesController < ApplicationController
 
   def create
     #if authenticity token is the same as one in ENV do
-    current_user.new_lifeline(params[:user_id])
+    slack_id = params[:user_id]
+    user = User.lookup_user_by_slack slack_id
+    user.new_lifeline slack_id
   end
 end

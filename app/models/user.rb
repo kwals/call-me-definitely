@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 
   def new_lifeline(slack_user_id)
     Lifeline.create(user_id: self.id, slack_id: slack_user_id)
+  end
+  
 end
