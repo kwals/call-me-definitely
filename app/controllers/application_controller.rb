@@ -6,4 +6,7 @@ class ApplicationController < ActionController::Base
 
   def home
   end
+
+  rescue User::InvalidRequestError => e
+  rescue_from Exception => "Sorry, I can't do that thing you asked. I'm not sure what you're talking about."
 end
