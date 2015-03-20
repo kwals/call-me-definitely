@@ -41,6 +41,5 @@ Rails.application.configure do
 
   config.handle_errors = Proc.new do |e|
     #pry here or figure out where this logs to  
-    config.logger.error(e.message) 
   end
 end

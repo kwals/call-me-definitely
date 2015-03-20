@@ -8,7 +8,7 @@ class LifelinesController < ApplicationController
     Lifeline.add_lifeline params[:user_id] 
     render json: { text: "Hey- do you have a minute? It's an emergency.", username: "D.Zoolander" }
   rescue StandardError => e
-    Rails.config.env.error_handler.(e)
+    Rails.configuration.handle_errors.(e)
     render json: { text: "Dude, who are you and what did you do with my sparkle?", username: "Mugatu" }
   end
 
