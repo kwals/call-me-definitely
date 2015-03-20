@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
         u.auth_data = data
         u.user_data = user_data
         phone = user_data["user"]["profile"]["phone"]
-        u.phone_number = phone unless phone.nil?
+        u.phone_number = phone unless phone.nil? 
       end
     end
   end
