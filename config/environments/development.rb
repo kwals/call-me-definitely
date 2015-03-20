@@ -40,7 +40,6 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   config.handle_errors = Proc.new do |e|
-    #pry here or figure out where this logs to 
-    config.logger.error(e.message) 
+    #pry here or figure out where this logs to  
   end
 end

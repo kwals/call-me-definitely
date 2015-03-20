@@ -19,7 +19,7 @@ KATIES_TWILIO = Figaro.env.KATIES_TWILIO
 
 	client.account.messages.create(
 		from: KATIES_TWILIO, 
-		to: , 
+		to: KATIES_PHONE, 
 		body: "Texting from inside the LifeLine class.")
 
 	end

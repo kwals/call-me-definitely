@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     number_path
   end
 
-  def home
+  def home 
   end
   
 end
