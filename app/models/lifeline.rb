@@ -9,24 +9,26 @@ KATIES_TWILIO = Figaro.env.KATIES_TWILIO
 
 
 	def create
+
 	end
 
-	def send_sos 
+	def self.send_sos user
 		# Should this line go in another function? I feel like it is going to be reused.
 	client = Twilio::REST::Client.new(T_ACCOUNT_SID, T_AUTH_TOKEN)
 
 	client.account.messages.create(
 		from: KATIES_TWILIO, 
-		to: KATIES_PHONE, 
+		to: user.phone_number, 
 		body: "Texting from inside the LifeLine class.")
 
 	end
 
 
-	def call_me
+	def self.call_me user
+		client = Twilio::REST::Client.new(T_ACCOUNT_SID, T_AUTH_TOKEN)
 		client.account.calls.create(
 			from: KATIES_TWILIO, 
-			to: KATIES_PHONE, 
+			to: user.phone_number, 
 			url: "http://twimlets.com/holdmusic?Bucket=com.twilio.music.rock", 
 			body: "Music!")
 	end
