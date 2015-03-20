@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150320002449) do
+ActiveRecord::Schema.define(version: 20150320145852) do
 
   create_table "lifelines", force: :cascade do |t|
     t.integer  "user_id"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20150320002449) do
     t.string   "phone_number"
     t.string   "slack_id"
     t.text     "auth_data"
+    t.text     "user_data"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

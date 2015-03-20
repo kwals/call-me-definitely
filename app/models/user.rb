@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :omniauthable, omniauth_providers: [:slack]
 
   serialize :auth_data, JSON
+  serialize :user_data, JSON
 
   def self.from_omniauth data
     slack_id = data.uid
@@ -13,9 +14,10 @@ class User < ActiveRecord::Base
       where(slack_id: slack_id).first_or_create! do |u|
         user_data = HTTParty.get("https://slack.com/api/users.info", :query => { :token => Figaro.env.slack_token, :user => "#{slack_id}"})
         u.email = user_data["user"]["profile"]["email"]
-        u.password = Figaro.env.generic_password
+        u.password = SecureRandom.hex 64
         u.slack_id = slack_id
         u.auth_data = data
+        u.user_data = user_data
       end
     end
   end
