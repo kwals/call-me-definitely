@@ -1,7 +1,7 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def slack
-    # binding.pry
+    user = User.from_omniauth request.env["omniauth.auth"]
   end
 
 end
