@@ -9,7 +9,7 @@ class LifelinesController < ApplicationController
     render json: { text: "Hey- do you have a minute? It's an emergency.", username: "D.Zoolander" }
   rescue StandardError => e
     Rails.configuration.handle_errors.(e)
-    render json: { text: "Dude, who are you and what did you do with my sparkle?", username: "Mugatu" }
+    render json: { text: "Dude, who even are you?", username: "Mugatu" }
   end
 
   private
@@ -18,7 +18,7 @@ class LifelinesController < ApplicationController
     ENV["WEBHOOK_SLACK"] == params[:token] 
     rescue StandardError => e
       Rails.configuration.handle_errors.(e)
-      render json: { text: "Sorry dude, I have no idea what you're talking about.", username: "Mugatu" }
+      render json: { text: "Dude, who are you?", username: "Mugatu" }
     end
 
 end
