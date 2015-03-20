@@ -15,7 +15,7 @@ class LifelinesController < ApplicationController
   private
 
     def verify_slack_token!
-    ENV["WEBHOOK_SLACK"] == params[:token]
+    ENV["WEBHOOK_SLACK"] == params[:token] 
     rescue StandardError => e
       Rails.configuration.handle_errors.(e)
       render json: { text: "Sorry dude, I have no idea what you're talking about.", username: "Mugatu" }
