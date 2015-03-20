@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :registerable, and :omniauthable
   devise :database_authenticatable, 
@@ -20,12 +21,18 @@ class User < ActiveRecord::Base
         u.slack_id = slack_id
         u.auth_data = data
         u.user_data = user_data
-      end 
+        phone = user_data["user"]["profile"]["phone"]
+        u.phone_number = phone unless phone.nil?
+      end
     end
   end
 
-  def new_lifeline(slack_user_id)
-    Lifeline.create(user_id: self.id, slack_id: slack_user_id)
+  def self.lookup_by_slack_id(slack_user_id)
+    User.where(slack_id: slack_user_id).first
+  end
+
+  def new_lifeline
+    Lifeline.create!(user_id: self.id)
   end
 
 end

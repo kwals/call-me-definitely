@@ -8,8 +8,10 @@ KATIES_PHONE = Figaro.env.KATIES_PHONE
 KATIES_TWILIO = Figaro.env.KATIES_TWILIO
 
 
-	def create
-	end
+	def self.add_lifeline(slack_id)
+    user = User.lookup_by_slack_id slack_id
+    user.new_lifeline
+  end
 
 	def send_sos 
 		# Should this line go in another function? I feel like it is going to be reused.
@@ -17,7 +19,7 @@ KATIES_TWILIO = Figaro.env.KATIES_TWILIO
 
 	client.account.messages.create(
 		from: KATIES_TWILIO, 
-		to: KATIES_PHONE, 
+		to: , 
 		body: "Texting from inside the LifeLine class.")
 
 	end
