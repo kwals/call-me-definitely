@@ -18,6 +18,9 @@ class User < ActiveRecord::Base
         u.slack_id = slack_id
         u.auth_data = data
         u.user_data = user_data
+        binding.pry
+        phone = user_data["user"]["profile"]["phone"]
+        u.phone_number = phone unless phone.nil?
       end
     end
   end
