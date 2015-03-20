@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150320145852) do
 
-
   create_table "lifelines", force: :cascade do |t|
     t.integer  "user_id"
     t.datetime "created_at", null: false
