@@ -15,7 +15,7 @@ class LifelinesController < ApplicationController
   private
 
     def verify_slack_token!
-      render json: { text: "BTW- Sorry, I can't find that thing earlier.", username: "Melanie" } unless (ENV["WEBHOOK_SLACK"] == params[:token]) && (User.lookup_by_slack_id params[:id])
+      render json: { text: "BTW- Sorry, I can't find that thing earlier.", username: "Matilda" } unless (ENV["WEBHOOK_SLACK"] == params[:token]) #&& (User.lookup_by_slack_id params[:id])
       # redirect_to errors_path
       # raise User::InvalidRequestError, "I could not find what you were looking for." 
     end
