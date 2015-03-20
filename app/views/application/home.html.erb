@@ -1,1 +1,6 @@
 <h1>You Are Here</h1>
+<% if current_user %>
+<%= button_to "Logout", destroy_user_session_path, method: :delete %>
+<% else %>
+<%= link_to "Login", new_user_session_path, method: :get %>
+<% end %>

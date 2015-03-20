@@ -8,4 +8,5 @@ class LifelinesController < ApplicationController
     slack_user_id = params["user_id"]
     current_user.new_lifeline(slack_user_id)
   end
+  
 end

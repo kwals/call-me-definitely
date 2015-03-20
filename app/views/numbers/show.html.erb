@@ -1,0 +1,5 @@
+<%= form_tag number_edit_path, method: "post" do %>
+  <%= label_tag "Enter Number" %>
+  <%= telephone_field_tag (:phone_number) %>
+  <%= submit_tag("Update") %>
+<% end %>

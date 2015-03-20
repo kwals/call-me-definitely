@@ -10,7 +10,9 @@ class User < ActiveRecord::Base
 
   def self.from_omniauth data
     slack_id = data.uid
-    unless User.find_by(slack_id: slack_id)
+    if User.find_by(slack_id: slack_id)
+      User.find_by(slack_id: slack_id)
+    else
       where(slack_id: slack_id).first_or_create! do |u|
         user_data = HTTParty.get("https://slack.com/api/users.info", :query => { :token => Figaro.env.slack_token, :user => "#{slack_id}"})
         u.email = user_data["user"]["profile"]["email"]
@@ -18,13 +20,12 @@ class User < ActiveRecord::Base
         u.slack_id = slack_id
         u.auth_data = data
         u.user_data = user_data
-      end
+      end 
     end
   end
 
   def new_lifeline(slack_user_id)
     Lifeline.create(user_id: self.id, slack_id: slack_user_id)
   end
-
 
 end
