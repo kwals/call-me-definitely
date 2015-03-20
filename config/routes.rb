@@ -5,6 +5,4 @@ Rails.application.routes.draw do
 
   resources :lifelines, only: :create
 
-  # get '/errors' => 'application#error'
-
   end
