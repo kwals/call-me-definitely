@@ -15,11 +15,11 @@ KATIES_TWILIO = Figaro.env.KATIES_TWILIO
 
 	def send_sos 
 		# Should this line go in another function? I feel like it is going to be reused.
-	client = Twilio::REST::Client.new(T_ACCOUNT_SID, T_AUTH_TOKEN)
+		client = Twilio::REST::Client.new(T_ACCOUNT_SID, T_AUTH_TOKEN)
 
-	client.account.messages.create(
+		client.account.messages.create(
 		from: KATIES_TWILIO, 
-		to: , 
+		to: KATIES_PHONE, 
 		body: "Texting from inside the LifeLine class.")
 
 	end
