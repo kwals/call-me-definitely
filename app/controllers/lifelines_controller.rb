@@ -5,6 +5,7 @@ class LifelinesController < ApplicationController
   before_action :verify_slack_token!, only: [:create]
 
   def create
+
     if Lifeline.add_lifeline params[:user_id] 
       render json: "BTW- sorry I haven't gotten back to you yet. I will do it soon."
     else
