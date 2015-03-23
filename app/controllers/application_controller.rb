@@ -5,7 +5,11 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!, except: [:home]
 
   def after_sign_in_path_for(resource)
-    number_path
+    if current_user.phone_number
+      root_path
+    else
+      number_path
+    end
   end
 
   def home 
