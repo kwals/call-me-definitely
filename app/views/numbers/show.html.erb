@@ -1,0 +1,16 @@
+<% unless current_user.phone_number %>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h3 class="panel-title">Just a sec...</h3>
+    </div>
+    <div class="panel-body">
+      Hold on! We need your phone number before this will do much of anything. Please enter it below with the area code.
+    </div>
+  </div>
+<% end %>
+
+<%= form_tag number_edit_path, method: "post" do %>
+  <%= label_tag "Phone Number: " %>
+  <%= telephone_field_tag (:phone_number) %>
+  <%= submit_tag "Update", class: "btn btn-default" %>
+<% end %>

@@ -40,7 +40,7 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   config.handle_errors = Proc.new do |e|
-    #so something here
+    #log this somewhere. config.logger.error raised errors
   end
 
 end

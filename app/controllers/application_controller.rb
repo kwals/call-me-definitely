@@ -5,10 +5,14 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!, except: [:home]
 
   def after_sign_in_path_for(resource)
-    "https://callmedefinitely.ngrok.com"
+    if current_user.phone_number
+      root_path
+    else
+      number_path
+    end
   end
 
-  def home
+  def home 
   end
   
 end

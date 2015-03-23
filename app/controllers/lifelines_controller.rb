@@ -9,7 +9,7 @@ class LifelinesController < ApplicationController
     render json: { text: "Hey- do you have a minute? It's an emergency.", username: "D.Zoolander" }
   rescue StandardError => e
     Rails.configuration.handle_errors.(e)
-    render json: { text: "Dude, I don't even know who you are anymore.", username: "Mugatu" }
+    render json: { text: "Dude, who even are you?", username: "Mugatu" }
   end
 
 private
