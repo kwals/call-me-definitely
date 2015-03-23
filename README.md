@@ -1,12 +1,12 @@
 == Call Me Definitely
 
-<i>Hey, I just met  you
+<i>Hey, I just met  you</i>
 
-And you seem crazy
+<i>And you seem crazy</i>
 
-But someone's calling
+<i>But someone's calling</i>
 
-See you later, maybe</i>
+<i>See you later, maybe</i>
 
 Ever been in a public situation, where you meet someone new, and they refuse to leave you alone?
 Are they looming in your personal space, so you feel you can't call for help or otherwise exit the situation without unwanted escalation or other negative consequences? 
