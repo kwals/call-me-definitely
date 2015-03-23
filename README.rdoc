@@ -1,28 +1,27 @@
-== README
+== Call Me Definitely
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<i> Hey, I just met you
+And you seem crazy
+But someone's calling
+See you later, maybe </i>
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Ever been in a public situation, where you meet someone new, and they refuse to leave you alone?
+Are they looming in your personal space, so you feel you can't call for help or otherwise exit the situation without unwanted escalation or other negative consequences? 
+This is the app for you.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+
+*The Basics: Register to gain access to our Slack channel
+
+*Current Functionality:
+  <li>Send a message in Slack starting with one of our preset, innocuous SOS words</li>
+  <li>Receive an immediate phone call giving you an excuse for leaving your current situation</li>
+
+*Planned Features:
+  <li>Request a call, which will be completed up to 2 hours in the future from time Slack message is sent</li>
+  <li>Select severity of excuse used</li>
+
+<strong> Note: Presently, this is a semi-private app for members of TIY DC's Jan2015 cohort.  </strong>
+
+**Are we putting keywords in README or elsewhere? Maybe a welcome email?
