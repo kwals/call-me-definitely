@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get 'numbers' => 'numbers#show', as: 'number'
   post 'numbers/edit' => 'numbers#update', as: 'number_edit'
+  get 'numbers/verify' => 'numbers#show_verify', as: 'verify'
+  # post 'authy/verify' => 'numbers#'
   
 end
 

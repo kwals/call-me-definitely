@@ -4,7 +4,6 @@ require 'Figaro'
 
 T_ACCOUNT_SID = Figaro.env.T_ACCOUNT_SID
 T_AUTH_TOKEN = Figaro.env.T_AUTH_TOKEN
-KATIES_PHONE = Figaro.env.KATIES_PHONE
 KATIES_TWILIO = Figaro.env.KATIES_TWILIO
 
 
