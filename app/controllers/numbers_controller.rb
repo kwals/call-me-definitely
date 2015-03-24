@@ -10,9 +10,11 @@ class NumbersController < ApplicationController
   end
 
   def update
-    number = params[:phone_number].gsub(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/, '1\1\2\3')
+    number = params[:phone_number]
+    #FIXME need to verify phone number without adding '1' to beginning
+    # .gsub(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/, '1\1\2\3')
     
-    if number.length == 11
+    if number.length == 10
       current_user.update(phone_number: number)
       flash[:notice] = "Phone number confirmed. Your ejector seat is primed."
       
@@ -20,7 +22,7 @@ class NumbersController < ApplicationController
      authy = Authy::API.register_user(
         email: current_user.email,
         cellphone: current_user.phone_number,
-        country_code: 1
+        country_code: "1"
       )
       current_user.update(authy_id: authy.id)
 

@@ -21,6 +21,7 @@ gem 'activesupport'
 gem 'slim-rails'
 gem 'httparty'
 gem 'twilio-ruby'
+gem 'authy'
 
 group :development, :test do
   gem 'better_errors'
